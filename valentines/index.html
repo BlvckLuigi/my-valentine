@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --pink: #ff4f8b;
+    --soft: #fff0f5;
+    --dark: #1c1c2b;
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+    font-family:'Montserrat',sans-serif;
+    background: linear-gradient(135deg,#fff,#fff5f8);
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+/* ---------- MAIN ---------- */
+#page {
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+h1 {
+    font-family:'Playfair Display',serif;
+    font-size:3.2rem;
+    color:var(--pink);
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+p {
+    max-width:650px;
+    font-size:1.1rem;
+    line-height:1.8;
+    margin:25px 0;
+    opacity:.9;
+}
+
+/* ---------- BUTTONS ---------- */
+.buttons {
+    position: relative;
+    width: 340px;
+    height: 140px;
+    margin-top: 30px;
+}
+
+button {
+    padding:18px 45px;
+    font-size:1.1rem;
+    border-radius:14px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    position:absolute;
+    transition:.35s ease;
+}
+
+#yes {
+    background: var(--pink);
+    color:white;
+    left:0;
+    box-shadow: 0 15px 40px rgba(255,79,139,.35);
+}
+
+#no {
+    background:white;
+    border:2px solid #eee;
+    left:170px;
+}
+
+/* ---------- HINT ---------- */
+#hint {
+    margin-top:20px;
+    font-style:italic;
+    color:#777;
+}
+
+/* ---------- CELEBRATION ---------- */
+#celebration {
+    position: fixed;
+    inset:0;
+    background: rgba(255,255,255,.95);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    z-index:5;
+}
+
+#celebration h2 {
+    font-family:'Playfair Display',serif;
+    font-size:3.5rem;
+    color:var(--pink);
+}
+
+/* ---------- SLIDESHOW ---------- */
+#slideshow {
+    display:none;
+    min-height:100vh;
+    background: var(--dark);
+    color:white;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+}
+
+.slider {
+    width:90%;
+    max-width:900px;
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    background:#000;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    transition: height 0.5s ease; /* dynamic height */
+}
+
+.slide {
+    width:100%;
+    height:auto;
+    display:block;
+    opacity:0;
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    transition: opacity 1.2s ease;
+}
+
+.slide.active { opacity:1; }
+
+.caption {
+    margin-top:25px;
+    font-size:1.1rem;
+    opacity:.85;
+    text-align:center;
+}
+
+/* ---------- MUSIC ---------- */
+.music {
+    margin-top:35px;
+}
+
+.music button {
+    padding:15px 30px;
+    border-radius:40px;
+    background: rgba(255,255,255,.15);
+    color:white;
+    border:none;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeInUp {
+    from { opacity:0; transform:translateY(20px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:768px) {
+    h1 { font-size:2.4rem; }
+    .caption { font-size:1rem; }
+    button { padding:14px 30px; font-size:1rem; }
+    #no { left:0; top:70px; }
+}
+
+@media (max-width:480px) {
+    h1 { font-size:2rem; }
+    .caption { font-size:.95rem; }
+    button { padding:12px 25px; font-size:.95rem; }
+    #no { top:60px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MAIN PAGE -->
+<div id="page">
+ <h1 style="font-size:3.8rem;">Will you be my Valentine? 💖</h1>
+
+<p>
+    Not just for a day.<br><br>
+    But for the laughs we haven’t had yet, the memories we’re about to create, and the quiet moments where it’s just us.<br><br>
+    I’m choosing you — intentionally, genuinely, and with effort that doesn’t disappear tomorrow.
+</p>
+
+<div class="buttons">
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 😏</button>
+</div>
+
+<div id="hint">The “No” button is nervous… give it a second 😌</div>
+</div>
+
+<!-- CELEBRATION -->
+<div id="celebration">
+    <h2>You chose me 💖</h2>
+    <p style="margin-top:15px;font-size:1.2rem">
+        And I promise — I won’t take that lightly.
+    </p>
+</div>
+
+<!-- SLIDESHOW -->
+<div id="slideshow">
+    <h1 style="margin-bottom:20px">Till Infinity it's US 💖</h1>
+
+    <div class="slider">
+       <img class="slide active" src="C:\Users\Makoae Taoana\Documents\valentines\images\IMG-20240914-WA0069.jpg">
+        <img class="slide" src="C:\Users\Makoae Taoana\Documents\valentines\images\IMG-20251005-WA0037.jpg">
+        <img class="slide" src="C:\Users\Makoae Taoana\Documents\valentines\images\IMG-20251005-WA0033.jpg"> 
+        <img class="slide" src="C:\Users\Makoae Taoana\Documents\valentines\images\IMG-20251223-WA0012.jpg"> 
+        <img class="slide" src="C:\Users\Makoae Taoana\Documents\valentines\images\IMG-20251223-WA0014.jpg">
+        <img class="slide" src="C:\Users\Makoae Taoana\Documents\valentines\images\IMG-20251005-WA0028.jpg"> 
+        <img class="slide" src="C:\Users\Makoae Taoana\Documents\valentines\images\IMG-20251005-WA0025.jpg"> 
+        <img class="slide" src="C:\Users\Makoae Taoana\Documents\valentines\images\IMG-20240626-WA0010.jpg"> 
+        <img class="slide" src="C:\Users\Makoae Taoana\Documents\valentines\images\IMG-20240914-WA0074.jpg">
+    </div>
+
+    <div class="caption">I am not perfect but you make life worth it.</div>
+
+    <audio id="song" preload="auto">
+        <source src="C:\Users\Makoae Taoana\Documents\valentines\images\joyner_lucas_feat._ashanti_fall_slowly_evolution_mp3_36253.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+/* ---------- NO BUTTON RUNS AWAY ---------- */
+const no = document.getElementById("no");
+const box = document.querySelector(".buttons");
+const hint = document.getElementById("hint");
+let attempts = 0;
+
+no.addEventListener("mouseenter", () => {
+    if(attempts < 6){
+        attempts++;
+        hint.textContent = [
+            "Not yet 😏",
+            "You’re persistent…",
+            "Okay okay wait—",
+            "Why are you smiling?",
+            "Almost tired…",
+            "Alright… you win 🥹"
+        ][attempts-1];
+
+        const maxX = box.clientWidth - no.offsetWidth;
+        const maxY = box.clientHeight - no.offsetHeight;
+
+        no.style.left = Math.random() * maxX + "px";
+        no.style.top = Math.random() * maxY + "px";
+    } else {
+        hint.textContent = "I can’t run anymore… click me 😌";
+    }
+});
+
+/* ---------- YES BUTTON FLOW ---------- */
+const yes = document.getElementById("yes");
+const page = document.getElementById("page");
+const celebration = document.getElementById("celebration");
+const slideshow = document.getElementById("slideshow");
+const slides = document.querySelectorAll('.slide');
+const slider = document.querySelector('.slider');
+const song = document.getElementById('song');
+let currentSlide = 0;
+
+yes.onclick = () => {
+    celebration.style.display = "flex";
+    setTimeout(() => {
+        page.style.display = "none";
+        celebration.style.display = "none";
+        slideshow.style.display = "flex";
+        startSlides();
+    }, 1800);
+};
+
+/* ---------- SLIDESHOW FUNCTION ---------- */
+function startSlides(){
+    adjustSliderHeight(slides[currentSlide]);
+    song.play().catch(() => console.log("Autoplay blocked"));
+
+    setInterval(()=>{
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add("active");
+        adjustSliderHeight(slides[currentSlide]);
+    },4000);
+}
+
+/* ---------- DYNAMIC SLIDER HEIGHT ---------- */
+function adjustSliderHeight(img){
+    const temp = new Image();
+    temp.src = img.src;
+    temp.onload = () => {
+        const ratio = temp.height / temp.width;
+        const width = slider.clientWidth;
+        slider.style.height = `${width * ratio}px`;
+    }
+}
+
+/* ---------- RESIZE WINDOW ---------- */
+window.addEventListener('resize', () => {
+    adjustSliderHeight(slides[currentSlide]);
+});
+</script>
+
+</body>
+</html>
